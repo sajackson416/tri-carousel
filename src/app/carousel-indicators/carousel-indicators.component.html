@@ -1,0 +1,14 @@
+@for (path of pathList; track $index) {
+<button
+  (click)="slideToI($index)"
+  style="
+    width: 5px;
+    height: 5px;
+    border: 1px solid black;
+    display: inline-block;
+    margin: 0 2px 0 2px;
+    cursor: pointer;
+  "
+  [style]="$index === activeI ? { backgroundColor: 'black' } : null"
+></button>
+}
