@@ -1,48 +1,32 @@
 <div
   style="
-    width: calc((16px * 2) + (300px * 3));
-    min-width: 50vw;
+    width: calc(3 * ((8px * 2) + 300px));
     height: fit-content;
     display: flex;
     justify-content: space-between;
     container-type: inline-size;
+    overflow: hidden;
   "
 >
   <div
     id="repeater"
     [style]="{
       position: 'relative',
-      left: '50%',
-      transform: 'translateX(-50%)',
+      transform: 'translateX(0)',
       display: 'flex',
+      transition: 'transform 0.5s',
+      width: 'calc(3 * ((8px * 2) + 300px))'
     }"
   >
     <img
-      id="left-over"
+      id="img1"
       class="ghost-img"
-      src="{{
-        pathList[(activeIndex + pathList.length - 2) % pathList.length]
-      }}"
-      alt="left side"
+      src="{{ pathList[pathList.length - 2] }}"
+      alt="img"
     />
-    <img
-      src="{{
-        pathList[activeIndex === 0 ? pathList.length - 1 : activeIndex - 1]
-      }}"
-      alt="prior"
-    />
-    <img src="{{ pathList[activeIndex] }}" alt="{{ activeIndex + 1 }}" />
-    <img
-      src="{{
-        pathList[activeIndex === pathList.length - 1 ? 0 : activeIndex + 1]
-      }}"
-      alt="next"
-    />
-    <img
-      id="right-over"
-      class="ghost-img"
-      src="{{ pathList[(activeIndex + 2) % pathList.length] }}"
-      alt="right side"
-    />
+    <img src="{{ pathList[pathList.length - 1] }}" alt="img" />
+    <img id="img3" src="{{ pathList[0] }}" alt="img" />
+    <img src="{{ pathList[1] }}" alt="img" />
+    <img class="ghost-img" src="{{ pathList[2] }}" alt="img" />
   </div>
 </div>

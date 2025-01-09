@@ -3,8 +3,16 @@ img {
   padding-right: 8px;
   display: inline-block;
   width: 300px;
+  transition: all 0.5s ease-in;
+  /* transform: translateX(-100%); */
 }
 
 .ghost-img {
   display: none;
+}
+
+.left-img {
+  position: absolute;
+  /* left: -33.3333%; */
+  display: inline-block;
 }
